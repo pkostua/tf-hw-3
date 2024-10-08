@@ -1,0 +1,14 @@
+[webservers]
+%{ for vm in web_vms ~}
+${vm.name} ansible_host=${length(vm.external_ip)==0?vm.internal_ip:vm.external_ip} fqdn=${ vm.fqdn }
+%{ endfor ~}
+
+[databases]
+%{ for vm in db_vms ~}
+${vm.name} ansible_host=${length(vm.external_ip)==0?vm.internal_ip:vm.external_ip} fqdn=${ vm.fqdn }
+%{ endfor ~}
+
+[storage]
+%{ for vm in storage_vms ~}
+${vm.name} ansible_host=${length(vm.external_ip)==0?vm.internal_ip:vm.external_ip} fqdn=${ vm.fqdn }
+%{ endfor ~}
