@@ -21,7 +21,9 @@ https://github.com/pkostua/tf-hw-3/commit/3c105a0fbd5426fd20bdb482fd87bb8c0518ff
 
 ## Задание 7
 выражение в terraform console
+```
 > {  network_id = local.vpc.network_id,     subnet_ids = concat(slice(local.vpc.subnet_ids, 0, 2), slice(local.vpc.subnet_ids, 3, length(local.vpc.subnet_ids))),     subnet_zones = concat(slice(local.vpc.subnet_zones, 0, 2), slice(local.vpc.subnet_zones, 3, length(local.vpc.subnet_zones))) }
+```
 
 ## Задание 8
 Ошибки  
