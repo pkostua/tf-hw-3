@@ -16,10 +16,12 @@ https://github.com/pkostua/tf-hw-3/commit/3c105a0fbd5426fd20bdb482fd87bb8c0518ff
 
 ## Задание 6
 Часть 1 выполнил на всех ВМ из файла inventory.ini запуск paybook описан в файле ansible.tf.   
-Часть 2 выполнил частично. Модифицированный шаблон находится в файле inventory.tftpl. Но для применения такого кода нужна еще одна ВМ бастион, поднять такую ВМ через терраформ не составляет проблемы. однако как настроить ansible через ssh proxy да еще и определить тип адреса(внешний внутренний) а может быть установить ansible на бастион?... Видимо эта тема следующей части обучений
+Часть 2 выполнил частично. Модифицированный шаблон находится в файле inventory.tftpl. Но для применения такого кода нужна еще одна ВМ бастион, поднять такую ВМ через терраформ не составляет проблемы. однако как настроить ansible через ssh proxy да еще и определить тип адреса(внешний внутренний) а может быть установить ansible на бастион?... Видимо эта тема следующей части обучений  
+Код в той же ветке
 
 ## Задание 7
-{  network_id = local.vpc.network_id,     subnet_ids = concat(slice(local.vpc.subnet_ids, 0, 2), slice(local.vpc.subnet_ids, 3, length(local.vpc.subnet_ids))),     subnet_zones = concat(slice(local.vpc.subnet_zones, 0, 2), slice(local.vpc.subnet_zones, 3, length(local.vpc.subnet_zones))) }
+выражение в terraform console
+> {  network_id = local.vpc.network_id,     subnet_ids = concat(slice(local.vpc.subnet_ids, 0, 2), slice(local.vpc.subnet_ids, 3, length(local.vpc.subnet_ids))),     subnet_zones = concat(slice(local.vpc.subnet_zones, 0, 2), slice(local.vpc.subnet_zones, 3, length(local.vpc.subnet_zones))) }
 
 ## Задание 8
 Ошибки  
