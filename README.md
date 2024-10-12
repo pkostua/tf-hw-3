@@ -11,7 +11,7 @@ https://github.com/pkostua/tf-hw-3/commit/3c105a0fbd5426fd20bdb482fd87bb8c0518ff
 ![image](https://github.com/user-attachments/assets/9246f6be-0c30-40bc-9719-c0dd93b9dd28)
 
 ## Задание 5
-Задание выполнено частично. Не реализована целевая последовательность вывода полей name - id - fqdn. Список сделан на основе результатов 4 задания ansible.tf
+Задание выполнено частично. Не реализована целевая последовательность вывода полей name - id - fqdn. Список сделан на основе результатов 4 задания ansible.tf  
 ![image](https://github.com/user-attachments/assets/f922bc65-4887-4e80-9cff-9f947e675f56)
 
 ## Задание 6
