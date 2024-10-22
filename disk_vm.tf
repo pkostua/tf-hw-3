@@ -31,11 +31,39 @@ resource "yandex_compute_instance" "storage" {
   }
 
   #Подключение дисков
+  #Вариант 1. Прямая передача идентификатора диска из текщего объекта счетчика
   dynamic "secondary_disk" {
     for_each = yandex_compute_disk.storage_disk
 
     content {
       disk_id = secondary_disk.value.id
+    }
+  }
+
+  #Вариант 2. Общее оформление счетчика  + идентифкатор достается из исходного массива через указатель
+  dynamic "secondary_disk" {
+    for_each = {for key,value in yandex_compute_disk.storage_disk: key => value}
+
+    content {
+      disk_id = yandex_compute_disk.storage_disk[secondary_disk.key].id
+    }
+  }
+
+  #Вариант 3. Исходный массив размапить на список идентификаторов, идентификатор записать как текущий объект счиетчика
+  dynamic "secondary_disk" {
+    for_each = yandex_compute_disk.storage_disk.*.id
+
+    content {
+      disk_id = secondary_disk.value
+    }
+  }
+
+  #Вариант 4. Как вариант 3, но за идентификатором идем в исходный массив
+  dynamic "secondary_disk" {
+    for_each = yandex_compute_disk.storage_disk.*.id
+
+    content {
+      disk_id = yandex_compute_disk.storage_disk[secondary_disk.key].id
     }
   }
 
